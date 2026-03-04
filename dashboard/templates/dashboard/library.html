@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Library</title>
+    <style>
+        body {
+            background: #020617;
+            color: white;
+            font-family: Arial;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #1e293b;
+        }
+        th {
+            color: #22c55e;
+        }
+        a {
+            color: #22c55e;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>❤️ My Library</h1>
+<a href="/">⬅ Back to Dashboard</a>
+
+<table>
+    <tr>
+        <th>Track</th>
+        <th>Artist</th>
+        <th>Popularity</th>
+    </tr>
+
+    {% for song in songs %}
+    <tr>
+        <td>{{ song.track_name }}</td>
+        <td>{{ song.artist }}</td>
+        <td>{{ song.popularity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

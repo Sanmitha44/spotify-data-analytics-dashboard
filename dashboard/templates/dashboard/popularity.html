@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popularity Insights</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background:#020617;
+      color:white;
+      font-family:Arial;
+      padding:20px;
+    }
+    a { color:#22c55e; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<h1>🎵 Popularity Insights</h1>
+<a href="/">⬅ Back to Dashboard</a>
+
+<div style="width:400px; margin-top:40px;">
+  <canvas id="popChart"></canvas>
+</div>
+
+<script>
+  new Chart(document.getElementById('popChart'), {
+    type: 'pie',
+    data: {
+      labels: {{ labels|safe }},
+      datasets: [{
+        data: {{ values|safe }},
+        backgroundColor: ['#ef4444', '#22c55e']
+      }]
+    }
+  });
+</script>
+
+</body>
+</html>
